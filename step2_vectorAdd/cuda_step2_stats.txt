@@ -1,0 +1,42 @@
+Generating SQLite file vectoradd_profile.sqlite from vectoradd_profile.nsys-rep
+Processing [vectoradd_profile.sqlite] with [/usr/lib/nsight-systems/target-linux-x64/reports/cuda_api_sum.py]... 
+
+ ** CUDA API Summary (cuda_api_sum):
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)     Med (ns)    Min (ns)    Max (ns)    StdDev (ns)            Name         
+ --------  ---------------  ---------  ------------  -----------  ---------  -----------  ------------  ----------------------
+     97.9      114,197,892          3  38,065,964.0      4,705.0      1,324  114,191,863  65,926,962.4  cudaMalloc            
+      1.3        1,476,459          1   1,476,459.0  1,476,459.0  1,476,459    1,476,459           0.0  cuLibraryLoadData     
+      0.3          404,951          3     134,983.7     37,773.0     37,692      329,486     168,444.0  cudaMemcpy            
+      0.3          308,947          1     308,947.0    308,947.0    308,947      308,947           0.0  cuLibraryGetKernel    
+      0.1          163,342          1     163,342.0    163,342.0    163,342      163,342           0.0  cudaLaunchKernel      
+      0.1           62,111          3      20,703.7      7,262.0      1,894       52,955      28,059.1  cudaFree              
+      0.0            1,747          1       1,747.0      1,747.0      1,747        1,747           0.0  cuModuleGetLoadingMode
+      0.0              243          1         243.0        243.0        243          243           0.0  cuKernelGetName       
+
+Processing [vectoradd_profile.sqlite] with [/usr/lib/nsight-systems/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)                          Name                         
+ --------  ---------------  ---------  --------  --------  --------  --------  -----------  -----------------------------------------------------
+    100.0            2,081          1   2,081.0   2,081.0     2,081     2,081          0.0  vectorAdd(const float *, const float *, float *, int)
+
+Processing [vectoradd_profile.sqlite] with [/usr/lib/nsight-systems/target-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)           Operation          
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ----------------------------
+     67.9           33,927      2  16,963.5  16,963.5    16,835    17,092        181.7  [CUDA memcpy Host-to-Device]
+     32.1           16,067      1  16,067.0  16,067.0    16,067    16,067          0.0  [CUDA memcpy Device-to-Host]
+
+Processing [vectoradd_profile.sqlite] with [/usr/lib/nsight-systems/target-linux-x64/reports/cuda_gpu_mem_size_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Size) (cuda_gpu_mem_size_sum):
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)           Operation          
+ ----------  -----  --------  --------  --------  --------  -----------  ----------------------------
+      0.400      2     0.200     0.200     0.200     0.200        0.000  [CUDA memcpy Host-to-Device]
+      0.200      1     0.200     0.200     0.200     0.200        0.000  [CUDA memcpy Device-to-Host]
+

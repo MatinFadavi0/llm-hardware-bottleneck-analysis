@@ -1,0 +1,17 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Profiling & Data output files (فایل‌های سنگین nsys)
+*.nsys-rep
+*.sqlite
+*.sqlite-wal
+
+# VS Code / IDE
+.vscode/
+.idea/

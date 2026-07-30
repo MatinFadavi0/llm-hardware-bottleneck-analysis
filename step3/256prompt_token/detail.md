@@ -20,7 +20,9 @@ nsys profile \
 
 
 
-use guidllm with : guidellm run \
+use guidllm with : 
+
+guidellm run \
     --backend kind=openai_http,target="http://localhost:8000/v1",model="Qwen/Qwen2.5-1.5B-Instruct" \
     --data kind=synthetic_text,prompt_tokens=256,output_tokens=128 \
     --profile kind=constant,rate=5 \

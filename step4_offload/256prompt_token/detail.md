@@ -2,7 +2,8 @@ model name : Qwen/Qwen2.5-1.5B-Instruct
 vram-utilization : 0.52
 max-model-len : 2048
 
-serve model with :  
+serve and evaluate model with  :  
+
 nsys profile \
   --trace=cuda,nvtx,osrt,cudnn,cublas \
   --sample=none \

@@ -1,5 +1,5 @@
 model name : Qwen/Qwen2.5-1.5B-Instruct
-vram-utilization : 0.53
+vram-utilization : 0.7
 max-model-len : 2500
 
 serve and evaluate model with :  

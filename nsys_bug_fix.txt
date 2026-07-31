@@ -1,0 +1,9 @@
+mkdir -p /tmp/fake_bin                               
+cat > /tmp/fake_bin/file << 'EOF'
+#!/bin/bash
+echo "ELF 64-bit LSB executable, x86-64"
+exit 0
+EOF
+chmod +x /tmp/fake_bin/file
+
+export PATH="/tmp/fake_bin:$PATH"

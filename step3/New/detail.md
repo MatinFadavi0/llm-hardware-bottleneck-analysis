@@ -4,7 +4,7 @@ max-model-len : 2500
 
 serve and evaluate model with :  
 
-nsys profile \                                                                
+nsys profile \
   --trace=cuda,nvtx,osrt,cudnn,cublas \
   --sample=none \
   --cpuctxsw=none \
@@ -15,19 +15,17 @@ nsys profile \
   vllm serve Qwen/Qwen2.5-1.5B-Instruct \
     --gpu-memory-utilization 0.53 \
     --max-model-len 2500 \
-    --port 8000 \
-    --enforce-eager
-
+    --port 8000
 
 
 use guidllm with : 
 
-guidellm run \
-    --backend kind=openai_http,target="http://localhost:8000/v1",model="Qwen/Qwen2.5-1.5B-Instruct" \
-    --data kind=synthetic_text,prompt_tokens=2048,output_tokens=128 \
-    --profile kind=constant,rate=5 \
-    --constraint kind=max_requests,count=50 \
-    --output kind=json,path="./results_step3.json"
+ guidellm run \
+  --backend kind=openai_http,target="http://localhost:8000/v1",model="Qwen/Qwen2.5-1.5B-Instruct" \
+  --data '{"kind":"synthetic_text","prompt_tokens":128,"output_tokens":64,"prefix_buckets":[{"bucket_weight":100,"prefix_count":2,"prefix_tokens":2000}]}' \
+  --profile kind=concurrent,streams=4\
+  --constraint kind=max_duration,seconds=60 \
+  --output kind=json,path="./results_step3.json"
 
     
 
